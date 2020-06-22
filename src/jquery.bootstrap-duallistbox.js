@@ -636,11 +636,11 @@
       }
       return this.element;
     },
-    setHelperSelectNamePostfix: function(value, refresh) {
+setHelperSelectNamePostfix: function(value, refresh) {
       this.settings.helperSelectNamePostfix = value;
       if (value) {
-        this.elements.select1.attr('name', this.originalSelectName + value + '1');
-        this.elements.select2.attr('name', this.originalSelectName + value + '2');
+        this.elements.select1.attr('name', this.originalSelectName.replace('[]','') + value + '1[]');
+        this.elements.select2.attr('name', this.originalSelectName.replace('[]','') + value + '2[]');
       } else {
         this.elements.select1.removeAttr('name');
         this.elements.select2.removeAttr('name');
